@@ -40,4 +40,4 @@ Sword: +10 CON  |  +10 EVD  |  +10 HIT  |  +10 LUK  |  +10 SPD  |  +10 STR<br>
 <br>
 5a. An attack cannot crit if their luck is less than or equal to the defender's luck.<br>
 5b. If attacker's luck is higher than the defender's luck then crit chance is calculated.<br>
-5c. Critical Strike Chance = (Attacker's Luck - Defender's Luck) * 2.<br>
+5c. Critical Strike Chance = (Attacker's Luck - Defender's Luck) * 2.
