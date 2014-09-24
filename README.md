@@ -24,17 +24,20 @@ Spear: +10 CON  |  +5 EVD  |  +10 HIT  |  +10 LUK  |  +5 SPD  |  +15 STR<br>
 Sword: +10 CON  |  +10 EVD  |  +10 HIT  |  +10 LUK  |  +10 SPD  |  +10 STR<br>
 <br>
 *********************************** HOW THE SIMULATOR WORKS ***********************************<br>
-1a. Damage Done = Attacker's Strength - Defender's Constitution.<br>
-1b. If defender's constitution > attacker's strength then attacker inflicts 1 damage.<br>
+1a. CON, EVD, HIT, LUK, SPD, and STR has a 50% chance to increase by 1 per level.<br>
+1b. HP has two chances to increase by 1 per level.<br>
 <br>
-2a. A player with a speed advantage of 3 or greater attacks 3 times. Opponent counterattacks 2 times.<br>
-2b. If the speed difference between both players is between 2 and -2 then both get 2 attacks.<br>
-2c. A player with a speed disadvantage of 3 or greater attacks 2 times. Opponent counterattacks 3 times.<br>
+2a. Damage Done = Attacker's Strength - Defender's Constitution.<br>
+2b. If defender's constitution > attacker's strength then attacker inflicts 1 damage.<br>
 <br>
-3a. A player's attack cannot be evaded if their hit is higher than or equal to the defender's evasion.<br>
-3b. If a player's hit is less than the opponent's evasion then dodge chance is calculated.<br>
-3c. Dodge Chance = (Defender's Evasion - Attacker's Hit) * 2.<br>
+3a. An attacker with a speed advantage of 3 or more attacks 3 times. Defender counterattacks twice.<br>
+3b. If the speed difference is between 2 and -2 then both players get 2 attacks.<br>
+3c. An attacker with a speed disadvantage of 3 or more attacks twice. Defender counterattacks 3 times.<br>
 <br>
-4a. A player's attack cannot crit if their luck is less than or equal to the opponent's luck.<br>
-4b. Critical Strikes are possible for the player with higher luck.<br>
-4c. Crit Chance = (Attacker's Luck - Defender's Luck) * 2.
+4a. An attack cannot be evaded if attacker's hit is higher than or equal to the defender's evasion.<br>
+4b. If attacker's hit is less than the defender's evasion then dodge chance is calculated.<br>
+4c. Dodge Chance = (Defender's Evasion - Attacker's Hit) * 2.<br>
+<br>
+5a. An attack cannot crit if their luck is less than or equal to the defender's luck.<br>
+5b. If attacker's luck is higher than the defender's luck then crit chance is calculated.<br>
+5c. Critical Strike Chance = (Attacker's Luck - Defender's Luck) * 2.<br>
