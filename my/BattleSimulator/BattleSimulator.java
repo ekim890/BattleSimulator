@@ -4,11 +4,11 @@ package my.BattleSimulator;
 
 public class BattleSimulator 
 {
-    public static void main(String[] args)
+	@SuppressWarnings("unused")
+	public static void main(String[] args)
     {
         BattleSimModel model = new BattleSimModel();
         BattleSimView view = new BattleSimView();
-        @SuppressWarnings("unused")
 		BattleSimController controller = new BattleSimController(model, view);
         view.setVisible(true);
     }

@@ -10,7 +10,7 @@ public class BattleSimTester
         BattleSimModel model = new BattleSimModel();
         
         model.createPlayer1("Player 1", 100, "Assassin", "Dagger");
-        model.createPlayer2("Player 2", 100, "Tank", "Dagger");
+        model.createPlayer2("Player 2", 100, "Berserker", "Axe");
         model.simulateBattle();
         System.out.print(model.getBattleResults());
         model.clearBattleResults();

@@ -154,8 +154,8 @@ public class Player
         // Levels up player starting from 1 to current level.
         for (int i = 1; i < level; i++)
         {
-            // Each attribute has a 50% chance to increase by 1 per level.
-            // HP has two chances to level up.
+            // CON, EVD, HIT, LUK, SPD, and STR has a 50% chance to increase by 1 per level
+            // HP has two chances to increase by 1 per level.
             boolean increaseHp = random.nextBoolean();
             boolean increaseHp2 = random.nextBoolean();
             boolean increaseCon = random.nextBoolean();

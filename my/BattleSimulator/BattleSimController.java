@@ -24,7 +24,7 @@ public class BattleSimController
         view.duelListener(new duelListener());
     }
 
-    class resetListener1 implements ActionListener
+    private class resetListener1 implements ActionListener
     {
 
         @Override
@@ -34,7 +34,7 @@ public class BattleSimController
         }
     }
 
-    class resetListener2 implements ActionListener 
+    private class resetListener2 implements ActionListener 
     {
         @Override
         public void actionPerformed(ActionEvent e) 
@@ -45,7 +45,7 @@ public class BattleSimController
 
     // Prints out all of Player 1's information in a window IF
     // given a valid name, level, player class, and weapon.
-    class confirmListener1 implements ActionListener 
+    private class confirmListener1 implements ActionListener 
     {
         @Override
         public void actionPerformed(ActionEvent e) 
@@ -78,7 +78,7 @@ public class BattleSimController
 
     // Prints out all of Player 1's information in a window IF
     // given a valid name, level, player class, and weapon.
-    class confirmListener2 implements ActionListener 
+    private class confirmListener2 implements ActionListener 
     {
         @Override
         public void actionPerformed(ActionEvent e) 
@@ -110,7 +110,7 @@ public class BattleSimController
     }
 
     // Prints out helpful information in a window.
-    class helpListener implements ActionListener 
+    private class helpListener implements ActionListener 
     {
         @Override
         public void actionPerformed(ActionEvent e) 
@@ -137,17 +137,19 @@ public class BattleSimController
             sb.append("\nSpear: +10 CON  |  +5 EVD  |  +10 HIT  |  +10 LUK  |  +5 SPD  |  +15 STR");
             sb.append("\nSword: +10 CON  |  +10 EVD  |  +10 HIT  |  +10 LUK  |  +10 SPD  |  +10 STR\n\n");
             sb.append("*********************************** HOW THE SIMULATOR WORKS ***********************************");
-            sb.append("\n1a. Damage Done = Attacker's Strength - Defender's Constitution.");
-            sb.append("\n1b. If defender's constitution > attacker's strength then attacker inflicts 1 damage.\n");
-            sb.append("\n2a. A player with a speed advantage of 3 or greater attacks 3 times. Opponent counterattacks 2 times.");
-            sb.append("\n2b. If the speed difference between both players is between 2 and -2 then both get 2 attacks.");
-            sb.append("\n2c. A player with a speed disadvantage of 3 or greater attacks 2 times. Opponent counterattacks 3 times.\n");
-            sb.append("\n3a. A player's attack cannot be evaded if their hit is higher than or equal to the defender's evasion.");
-            sb.append("\n3b. If a player's hit is less than the opponent's evasion then dodge chance is calculated.");
-            sb.append("\n3c. Dodge Chance = (Defender's Evasion - Attacker's Hit) * 2.\n");
-            sb.append("\n4a. A player's attack cannot crit if their luck is less than or equal to the opponent's luck.");
-            sb.append("\n4b. Critical Strikes are possible for the player with higher luck.");
-            sb.append("\n4c. Crit Chance = (Attacker's Luck - Defender's Luck) * 2.");
+            sb.append("\n1a. CON, EVD, HIT, LUK, SPD, and STR has a 50% chance to increase by 1 per level.");
+            sb.append("\n1b. HP has two chances to increase by 1 per level.\n");
+            sb.append("\n2a. Damage Done = Attacker's Strength - Defender's Constitution.");
+            sb.append("\n2b. If defender's constitution > attacker's strength then attacker inflicts 1 damage.\n");
+            sb.append("\n3a. An attacker with a speed advantage of 3 or more attacks 3 times. Defender counterattacks twice.");
+            sb.append("\n3b. If the speed difference is between 2 and -2 then both players get 2 attacks.");
+            sb.append("\n3c. An attacker with a speed disadvantage of 3 or more attacks twice. Defender counterattacks 3 times.\n");
+            sb.append("\n4a. An attack cannot be evaded if attacker's hit is higher than or equal to the defender's evasion.");
+            sb.append("\n4b. If attacker's hit is less than the defender's evasion then dodge chance is calculated.");
+            sb.append("\n4c. Dodge Chance = (Defender's Evasion - Attacker's Hit) * 2.\n");
+            sb.append("\n5a. An attack cannot crit if their luck is less than or equal to the defender's luck.");
+            sb.append("\n5b. If attacker's luck is higher than the defender's luck then crit chance is calculated.");
+            sb.append("\n5c. Critical Strike Chance = (Attacker's Luck - Defender's Luck) * 2.");
 
             String message = sb.toString();
             String title = "Battle Simulator Information";
@@ -157,7 +159,7 @@ public class BattleSimController
     }
 
     // Simulates a battle between two players if all input is valid.
-    class duelListener implements ActionListener 
+    private class duelListener implements ActionListener 
     {
         @Override
         public void actionPerformed(ActionEvent e)
@@ -196,14 +198,13 @@ public class BattleSimController
                 String title = "Victory!";
                 int messageType = JOptionPane.INFORMATION_MESSAGE;
                 JOptionPane.showMessageDialog(view, message, title, messageType);
-
             }
         }
     }
 
     // Name is valid if text field is not blank.
     // A window message informs the user if name is not provided.
-    public boolean playerNameCheck1(String name) 
+    private boolean playerNameCheck1(String name) 
     {
         boolean nameIsValid = true;
 
@@ -221,7 +222,7 @@ public class BattleSimController
 
     // Player level is valid if text field is an integer between 1-100.
     // A window message informs the user if the level is not valid.
-    public boolean playerLevelCheck1(String level) 
+    private boolean playerLevelCheck1(String level) 
     {
         int playerLevel = 1;
         boolean levelIsInteger = true;
@@ -258,7 +259,7 @@ public class BattleSimController
 
     // Makes sure that the user selects a class.
     // If no class is selected, then prompts the user to pick one.
-    public boolean playerClassCheck1(String playerClass)
+    private boolean playerClassCheck1(String playerClass)
     {
         boolean playerClassSelected = true;
 
@@ -276,7 +277,7 @@ public class BattleSimController
 
     // Makes sure that the user selects a weapon.
     // If no weapon is selected, then prompts the user to pick one.
-    public boolean playerWeaponCheck1(String weapon) 
+    private boolean playerWeaponCheck1(String weapon) 
     {
         boolean weaponSelected = true;
 
@@ -293,7 +294,7 @@ public class BattleSimController
     }
 
     // Same as playerNameCheck1 except this method is used for Player 2.
-    public boolean playerNameCheck2(String name) 
+    private boolean playerNameCheck2(String name) 
     {
         boolean nameIsValid = true;
 
@@ -310,7 +311,7 @@ public class BattleSimController
     }
 
     // Same as playerLevelCheck1 except this method is used for Player 2.
-    public boolean playerLevelCheck2(String level) 
+    private boolean playerLevelCheck2(String level) 
     {
         int playerLevel = 1;
         boolean levelIsInteger = true;
@@ -346,7 +347,7 @@ public class BattleSimController
     }
 
     // Same as playerClassCheck1 except this method is used for Player 2.
-    public boolean playerClassCheck2(String playerClass) 
+    private boolean playerClassCheck2(String playerClass) 
     {
         boolean playerClassSelected = true;
 
@@ -363,7 +364,7 @@ public class BattleSimController
     }
 
     // Same as playerWeaponCheck1 except this method is used for Player 2.
-    public boolean playerWeaponCheck2(String weapon) 
+    private boolean playerWeaponCheck2(String weapon) 
     {
         boolean weaponSelected = true;
 
